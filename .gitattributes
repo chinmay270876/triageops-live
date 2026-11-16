@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.svg binary
+*.drawio text eol=lf
+*.excalidraw text eol=lf

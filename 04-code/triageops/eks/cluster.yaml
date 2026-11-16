@@ -1,0 +1,19 @@
+# Filled in by Part 05: SUBNET_A and SUBNET_B are looked up on the workstation.
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: triageops-eks
+  region: ap-south-1
+  version: "1.34"
+vpc:
+  subnets:
+    public:
+      ap-south-1a: { id: SUBNET_A }
+      ap-south-1b: { id: SUBNET_B }
+managedNodeGroups:
+  - name: triage-nodes
+    instanceType: t3.medium
+    desiredCapacity: 2
+    minSize: 2
+    maxSize: 3
+    volumeSize: 20

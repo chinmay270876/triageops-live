@@ -1,0 +1,961 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="lab01" name="L01 What We Are Going to Build">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab01-0" />
+        <mxCell id="lab01-1" parent="lab01-0" />
+        <mxCell id="lab01-c1" value="LAB: What We Are Going to Build Today" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab01-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c5" value="AWS Mumbai (ap-south-1)  |  VPC triage-vpc" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;dashed=1;verticalAlign=top;align=left;spacingLeft=20;spacingTop=8;fillOpacity=35;" vertex="1" parent="lab01-1">
+          <mxGeometry x="500" y="120" width="1860" height="1150" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c9" value="EKS cluster triageops-eks" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;dashed=1;verticalAlign=top;align=left;spacingLeft=20;spacingTop=8;fillOpacity=35;" vertex="1" parent="lab01-1">
+          <mxGeometry x="1170" y="200" width="1150" height="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c2" value="Your Laptop&lt;br&gt;VS Code + Git Bash&lt;br&gt;PuTTY" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab01-1">
+          <mxGeometry x="60" y="200" width="380" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c3" value="GitHub&lt;br&gt;discover-devops/&lt;br&gt;triageops" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab01-1">
+          <mxGeometry x="60" y="560" width="380" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c4" value="Support agent&lt;br&gt;(browser)" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab01-1">
+          <mxGeometry x="60" y="920" width="380" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c6" value="EC2 Workstation&lt;br&gt;Python, Docker, Git&lt;br&gt;kubectl, eksctl&lt;br&gt;(our desk in the cloud)" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab01-1">
+          <mxGeometry x="560" y="220" width="540" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c7" value="IAM Role&lt;br&gt;triage-workstation-role" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="lab01-1">
+          <mxGeometry x="560" y="600" width="540" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c8" value="Amazon ECR&lt;br&gt;triageops:1.2.0&lt;br&gt;triageops:1.3.0" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab01-1">
+          <mxGeometry x="560" y="860" width="540" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c10" value="Load Balancer (port 80)" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab01-1">
+          <mxGeometry x="1220" y="280" width="1050" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c11" value="triage pod x 2&lt;br&gt;FastAPI service&lt;br&gt;port 8000" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab01-1">
+          <mxGeometry x="1220" y="480" width="500" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c12" value="ai-stub pod&lt;br&gt;our fake AI&lt;br&gt;port 9000" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab01-1">
+          <mxGeometry x="1770" y="480" width="500" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c13" value="ConfigMap&lt;br&gt;settings" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab01-1">
+          <mxGeometry x="1220" y="820" width="500" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c14" value="Secret&lt;br&gt;AI API key" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="lab01-1">
+          <mxGeometry x="1770" y="820" width="500" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c15" value="2 worker nodes (t3.medium)" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab01-1">
+          <mxGeometry x="1220" y="1050" width="1050" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c16" value="SSH" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab01-1" source="lab01-c2" target="lab01-c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c17" value="git push" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab01-1" source="lab01-c6" target="lab01-c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c18" value="permissions" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab01-1" source="lab01-c7" target="lab01-c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c19" value="docker push" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab01-1" source="lab01-c6" target="lab01-c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c20" value="kubectl / eksctl" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.25;entryX=0;entryY=0.5;" edge="1" parent="lab01-1" source="lab01-c6" target="lab01-c10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c21" value="image" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.75;" edge="1" parent="lab01-1" source="lab01-c8" target="lab01-c11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c22" value="complaint" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="lab01-1" source="lab01-c4" target="lab01-c10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c23" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab01-1" source="lab01-c10" target="lab01-c11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c24" value="/classify" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab01-1" source="lab01-c11" target="lab01-c12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c25" value="Concept&lt;br&gt;EC2 is our workstation. EKS is where our application runs.&lt;br&gt;GitHub keeps the code. ECR keeps the image." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab01-1">
+          <mxGeometry x="60" y="1320" width="1130" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="lab01-c26" value="Interview Question&lt;br&gt;Why do we build on an EC2 workstation and not on our laptop?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab01-1">
+          <mxGeometry x="1230" y="1320" width="1130" height="300" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lab02" name="L02 Lab Roadmap">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab02-0" />
+        <mxCell id="lab02-1" parent="lab02-0" />
+        <mxCell id="lab02-c1" value="Lab Roadmap: 4 Stages, 15 Parts" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab02-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab02-c2" value="SETUP" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab02-1">
+          <mxGeometry x="60" y="150" width="540" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lab02-c3" value="BUILD" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab02-1">
+          <mxGeometry x="640" y="150" width="540" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lab02-c4" value="SHIP" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab02-1">
+          <mxGeometry x="1220" y="150" width="540" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lab02-c5" value="OPERATE" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="lab02-1">
+          <mxGeometry x="1800" y="150" width="540" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lab02-c6" value="00 Laptop ready&lt;br&gt;01 VPC&lt;br&gt;02 IAM role, key, SG, EC2&lt;br&gt;03 PuTTY + role check&lt;br&gt;04 Install tools&lt;br&gt;05 Start EKS&lt;br&gt;(20 min, background)&lt;br&gt;06 GitHub repo + token" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;align=left;spacingLeft=20;" vertex="1" parent="lab02-1">
+          <mxGeometry x="60" y="300" width="540" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="lab02-c7" value="07 Gate 1 CONTRACT&lt;br&gt;models.py&lt;br&gt;&lt;br&gt;08 Gate 2 ASYNC&lt;br&gt;ai_stub, ai_client, triage&lt;br&gt;&lt;br&gt;09 Gate 3 SERVICE&lt;br&gt;config, logs, healthz&lt;br&gt;&lt;br&gt;Pull Request 1" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;align=left;spacingLeft=20;" vertex="1" parent="lab02-1">
+          <mxGeometry x="640" y="300" width="540" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="lab02-c8" value="10 Docker image + ECR&lt;br&gt;&lt;br&gt;11 Deploy to EKS&lt;br&gt;ConfigMap, Secret,&lt;br&gt;Deployments, Services&lt;br&gt;&lt;br&gt;12 Web page v1.3.0&lt;br&gt;rolling update&lt;br&gt;+ rollback" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;align=left;spacingLeft=20;" vertex="1" parent="lab02-1">
+          <mxGeometry x="1220" y="300" width="540" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="lab02-c9" value="13 Break it,&lt;br&gt;diagnose&lt;br&gt;(6 failures)&lt;br&gt;&lt;br&gt;14 Clean up&lt;br&gt;&lt;br&gt;15 Troubleshooting" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F8CECC;strokeColor=#B85450;align=left;spacingLeft=20;" vertex="1" parent="lab02-1">
+          <mxGeometry x="1800" y="300" width="540" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="lab02-c10" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab02-1" source="lab02-c6" target="lab02-c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab02-c11" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab02-1" source="lab02-c7" target="lab02-c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab02-c12" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab02-1" source="lab02-c8" target="lab02-c9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab02-c13" value="Golden rule: one branch per part  -&gt;  Pull Request  -&gt;  Merge  -&gt;  back to main  -&gt;  next branch" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="lab02-1">
+          <mxGeometry x="60" y="1060" width="2280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lab02-c14" value="Concept&lt;br&gt;EKS takes about 20 minutes. We start it early in the background (nohup)&lt;br&gt;and write the code while AWS builds the cluster." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab02-1">
+          <mxGeometry x="60" y="1260" width="1130" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="lab02-c15" value="Interview Question&lt;br&gt;Why do we start the EKS cluster in Part 05, before writing a single line of Python?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab02-1">
+          <mxGeometry x="1230" y="1260" width="1130" height="300" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lab03" name="L03 Part 01 Network VPC">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab03-0" />
+        <mxCell id="lab03-1" parent="lab03-0" />
+        <mxCell id="lab03-c1" value="Part 01: The Network (VPC)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab03-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab03-c4" value="VPC triage-vpc  10.0.0.0/16  (DNS hostnames on)" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;dashed=1;verticalAlign=top;align=left;spacingLeft=20;spacingTop=8;fillOpacity=35;" vertex="1" parent="lab03-1">
+          <mxGeometry x="560" y="300" width="1800" height="830" as="geometry" />
+        </mxCell>
+        <mxCell id="lab03-c2" value="Internet" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab03-1">
+          <mxGeometry x="1000" y="130" width="420" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="lab03-c3" value="Laptop&lt;br&gt;Git Bash&lt;br&gt;aws ec2 create-vpc ..." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab03-1">
+          <mxGeometry x="60" y="330" width="440" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="lab03-c5" value="Internet Gateway&lt;br&gt;triage-igw" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab03-1">
+          <mxGeometry x="1000" y="370" width="420" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lab03-c6" value="Route table&lt;br&gt;0.0.0.0/0 -&gt; IGW" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="lab03-1">
+          <mxGeometry x="1000" y="540" width="420" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="lab03-c7" value="Public subnet A&lt;br&gt;10.0.1.0/24  ap-south-1a&lt;br&gt;tag kubernetes.io/role/elb=1&lt;br&gt;auto-assign public IP" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab03-1">
+          <mxGeometry x="620" y="760" width="800" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="lab03-c8" value="Public subnet B&lt;br&gt;10.0.2.0/24  ap-south-1b&lt;br&gt;tag kubernetes.io/role/elb=1&lt;br&gt;auto-assign public IP" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab03-1">
+          <mxGeometry x="1500" y="760" width="800" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="lab03-c9" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab03-1" source="lab03-c5" target="lab03-c2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab03-c10" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab03-1" source="lab03-c6" target="lab03-c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab03-c11" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.25;exitY=1;" edge="1" parent="lab03-1" source="lab03-c6" target="lab03-c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab03-c12" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.75;exitY=1;" edge="1" parent="lab03-1" source="lab03-c6" target="lab03-c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab03-c13" value="creates" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.3;" edge="1" parent="lab03-1" source="lab03-c3" target="lab03-c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab03-c14" value="Concept&lt;br&gt;A subnet is public only because its route table sends 0.0.0.0/0 to an internet gateway.&lt;br&gt;The elb tag tells EKS where to place the public load balancer." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab03-1">
+          <mxGeometry x="60" y="1200" width="1130" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lab03-c15" value="Interview Question&lt;br&gt;Why two subnets in two Availability Zones?&lt;br&gt;What breaks if the elb tag is missing?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab03-1">
+          <mxGeometry x="1230" y="1200" width="1130" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lab04" name="L04 Part 02-03 Workstation">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab04-0" />
+        <mxCell id="lab04-1" parent="lab04-0" />
+        <mxCell id="lab04-c1" value="Part 02-03: The Workstation (EC2)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab04-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c2" value="Laptop&lt;br&gt;Git Bash: role, key, SG, EC2&lt;br&gt;PuTTY: SSH as ec2-user" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab04-1">
+          <mxGeometry x="60" y="160" width="480" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c3" value="Key pair&lt;br&gt;triage-key.ppk&lt;br&gt;(PuTTY format)" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="lab04-1">
+          <mxGeometry x="60" y="560" width="480" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c4" value="Security group&lt;br&gt;22 + 8000 from My IP only" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab04-1">
+          <mxGeometry x="640" y="160" width="640" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c5" value="EC2 triage-workstation&lt;br&gt;Amazon Linux 2023&lt;br&gt;t3.medium, 20 GiB gp3&lt;br&gt;public subnet A" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab04-1">
+          <mxGeometry x="640" y="450" width="640" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c6" value="IAM role&lt;br&gt;triage-workstation-role&lt;br&gt;attach AT LAUNCH" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="lab04-1">
+          <mxGeometry x="1380" y="160" width="960" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c7" value="Metadata service 169.254.169.254&lt;br&gt;temporary credentials" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="lab04-1">
+          <mxGeometry x="1380" y="450" width="960" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c8" value="AWS APIs: EKS, ECR, EC2" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab04-1">
+          <mxGeometry x="1380" y="680" width="960" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c9" value="Check:  aws sts get-caller-identity  -&gt;  assumed-role/triage-workstation-role" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab04-1">
+          <mxGeometry x="60" y="870" width="2280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c10" value="SSH" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab04-1" source="lab04-c2" target="lab04-c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c11" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab04-1" source="lab04-c4" target="lab04-c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c12" value="used by PuTTY" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab04-1" source="lab04-c3" target="lab04-c2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c13" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab04-1" source="lab04-c6" target="lab04-c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c14" value="who am I?" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.3;" edge="1" parent="lab04-1" source="lab04-c5" target="lab04-c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c15" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.8;" edge="1" parent="lab04-1" source="lab04-c5" target="lab04-c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c16" value="Concept&lt;br&gt;Humans log in with users. Machines get roles.&lt;br&gt;No access keys on the server, ever. Never leave the security group on default." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab04-1">
+          <mxGeometry x="60" y="1060" width="1130" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lab04-c17" value="Interview Question&lt;br&gt;Why not copy your access keys to the EC2?&lt;br&gt;What happened when we attached the role after launch?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab04-1">
+          <mxGeometry x="1230" y="1060" width="1130" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lab05" name="L05 Part 04-05 Tools and EKS">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab05-0" />
+        <mxCell id="lab05-1" parent="lab05-0" />
+        <mxCell id="lab05-c1" value="Part 04-05: Tools and the EKS Cluster" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab05-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c2" value="EC2 workstation&lt;br&gt;&lt;br&gt;docker, git&lt;br&gt;python3.11&lt;br&gt;kubectl 1.34&lt;br&gt;eksctl" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab05-1">
+          <mxGeometry x="60" y="160" width="520" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c3" value="cluster.yaml&lt;br&gt;name triageops-eks&lt;br&gt;version 1.34&lt;br&gt;subnets A + B&lt;br&gt;2 x t3.medium" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="lab05-1">
+          <mxGeometry x="660" y="160" width="540" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c4" value="nohup eksctl create&lt;br&gt;cluster -f cluster.yaml&lt;br&gt;-&gt; eks-create.log" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab05-1">
+          <mxGeometry x="660" y="520" width="540" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c5" value="CloudFormation stack&lt;br&gt;eksctl-triageops-eks-cluster" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab05-1">
+          <mxGeometry x="1280" y="160" width="560" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c6" value="CloudFormation stack&lt;br&gt;...-nodegroup-triage-nodes" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab05-1">
+          <mxGeometry x="1280" y="460" width="560" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c7" value="Control plane&lt;br&gt;(AWS runs it)" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab05-1">
+          <mxGeometry x="1920" y="160" width="420" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c8" value="2 worker nodes&lt;br&gt;(our pods run here)" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab05-1">
+          <mxGeometry x="1920" y="460" width="420" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c9" value="~/.kube/config  -&gt;  kubectl get nodes  =  2 Ready" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab05-1">
+          <mxGeometry x="1280" y="760" width="1060" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c10" value="Before eksctl, always:&lt;br&gt;1. subnet IDs by Name tag (never old IDs)&lt;br&gt;2. no leftover eksctl- stacks&lt;br&gt;3. stopped half way? wait for the stack, eksctl create nodegroup,&lt;br&gt;eksctl utils write-kubeconfig" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F8CECC;strokeColor=#B85450;align=left;spacingLeft=20;" vertex="1" parent="lab05-1">
+          <mxGeometry x="60" y="760" width="1140" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c11" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab05-1" source="lab05-c2" target="lab05-c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c12" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab05-1" source="lab05-c3" target="lab05-c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c13" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.3;" edge="1" parent="lab05-1" source="lab05-c4" target="lab05-c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c14" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab05-1" source="lab05-c5" target="lab05-c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c15" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab05-1" source="lab05-c5" target="lab05-c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c16" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab05-1" source="lab05-c6" target="lab05-c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c17" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.8;entryY=0;" edge="1" parent="lab05-1" source="lab05-c8" target="lab05-c9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c18" value="Concept&lt;br&gt;eksctl writes CloudFormation for us. Control plane = the brain AWS manages.&lt;br&gt;Node group = our EC2 machines where pods run." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab05-1">
+          <mxGeometry x="60" y="1150" width="1130" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lab05-c19" value="Interview Question&lt;br&gt;kubectl 1.37 and cluster 1.34: what is the rule?&lt;br&gt;What does nohup protect you from?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab05-1">
+          <mxGeometry x="1230" y="1150" width="1130" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lab06" name="L06 Part 06 GitHub Workflow">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab06-0" />
+        <mxCell id="lab06-1" parent="lab06-0" />
+        <mxCell id="lab06-c1" value="Part 06: GitHub Workflow (one branch per part)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab06-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c2" value="main" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab06-1">
+          <mxGeometry x="60" y="180" width="360" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c3" value="git checkout -b service" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab06-1">
+          <mxGeometry x="520" y="180" width="520" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c4" value="git add, commit&lt;br&gt;git push" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab06-1">
+          <mxGeometry x="1140" y="180" width="520" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c5" value="Pull Request&lt;br&gt;on GitHub" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab06-1">
+          <mxGeometry x="1760" y="180" width="580" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c6" value="Merge + delete branch" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab06-1">
+          <mxGeometry x="1760" y="440" width="580" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c7" value="git checkout main&lt;br&gt;git pull" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab06-1">
+          <mxGeometry x="1140" y="440" width="520" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c8" value="ls (code is there?)" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="lab06-1">
+          <mxGeometry x="520" y="440" width="520" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c9" value="next branch:&lt;br&gt;docker" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab06-1">
+          <mxGeometry x="60" y="440" width="360" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c10" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab06-1" source="lab06-c2" target="lab06-c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c11" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab06-1" source="lab06-c3" target="lab06-c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c12" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab06-1" source="lab06-c4" target="lab06-c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c13" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab06-1" source="lab06-c5" target="lab06-c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c14" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab06-1" source="lab06-c6" target="lab06-c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c15" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab06-1" source="lab06-c7" target="lab06-c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c16" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab06-1" source="lab06-c8" target="lab06-c9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c17" value="Token: classic, scope repo, 7 days&lt;br&gt;Username = GitHub user&lt;br&gt;Password = token (not shown)&lt;br&gt;credential cache: memory only, 10 h" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=20;" vertex="1" parent="lab06-1">
+          <mxGeometry x="60" y="700" width="1120" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c18" value="Branch before merge = empty main&lt;br&gt;docker build: requirements.txt not found&lt;br&gt;Always: merge, pull, ls" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F8CECC;strokeColor=#B85450;align=left;spacingLeft=20;" vertex="1" parent="lab06-1">
+          <mxGeometry x="1220" y="700" width="1120" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c19" value="Our branches:  service  -&gt;  docker  -&gt;  k8s  -&gt;  web-page" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab06-1">
+          <mxGeometry x="60" y="1060" width="2280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c20" value="Concept&lt;br&gt;Git is the record of what should be running. Every change arrives through a Pull Request.&lt;br&gt;If a token appears on screen or in a chat: revoke it now." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab06-1">
+          <mxGeometry x="60" y="1240" width="1130" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lab06-c21" value="Interview Question&lt;br&gt;Why one branch per part?&lt;br&gt;Why run git status before git add . ?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab06-1">
+          <mxGeometry x="1230" y="1240" width="1130" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lab07" name="L07 Part 07 Gate 1 CONTRACT">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab07-0" />
+        <mxCell id="lab07-1" parent="lab07-0" />
+        <mxCell id="lab07-c1" value="Part 07: Gate 1 CONTRACT in the Lab" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab07-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c2" value="Food app&lt;br&gt;POST /triage" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab07-1">
+          <mxGeometry x="60" y="200" width="360" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c3" value="Check 1: ComplaintIn&lt;br&gt;complaint 5 - 2000 chars&lt;br&gt;no extra fields&lt;br&gt;bad -&gt; 422" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab07-1">
+          <mxGeometry x="500" y="160" width="540" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c4" value="Triage service" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab07-1">
+          <mxGeometry x="1120" y="200" width="380" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c5" value="AI" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab07-1">
+          <mxGeometry x="1580" y="200" width="320" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c6" value="Check 2: TriageResult&lt;br&gt;category in Category list&lt;br&gt;priority 1 to 4, team in Team list&lt;br&gt;bad -&gt; Human Review" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab07-1">
+          <mxGeometry x="1120" y="520" width="780" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c7" value="TriageResponse&lt;br&gt;category, priority, team&lt;br&gt;+ decided_by" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab07-1">
+          <mxGeometry x="500" y="560" width="540" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c8" value="AI said:&lt;br&gt;payment&lt;br&gt;High&lt;br&gt;payment team&lt;br&gt;&lt;br&gt;3 problems&lt;br&gt;REJECTED" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="lab07-1">
+          <mxGeometry x="1980" y="200" width="360" height="620" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c9" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab07-1" source="lab07-c2" target="lab07-c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c10" value="valid" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab07-1" source="lab07-c3" target="lab07-c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c11" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab07-1" source="lab07-c4" target="lab07-c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c12" value="story" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab07-1" source="lab07-c5" target="lab07-c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c13" value="answer" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab07-1" source="lab07-c5" target="lab07-c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c14" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab07-1" source="lab07-c6" target="lab07-c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c15" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="lab07-1" source="lab07-c7" target="lab07-c2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c16" value="Lab files: app/models.py, scripts/contract_check.py      Run: python -m scripts.contract_check" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="lab07-1">
+          <mxGeometry x="60" y="900" width="2280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c17" value="Concept&lt;br&gt;422 = the caller made a mistake, they must fix it.&lt;br&gt;A bad AI answer is not the caller&#x27;s fault: we do not fail, we send it to Human Review." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab07-1">
+          <mxGeometry x="60" y="1100" width="1130" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lab07-c18" value="Interview Question&lt;br&gt;Why does extra=forbid matter?&lt;br&gt;Why not return the AI answer as it is?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab07-1">
+          <mxGeometry x="1230" y="1100" width="1130" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lab08" name="L08 Part 08 Gate 2 ASYNC">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab08-0" />
+        <mxCell id="lab08-1" parent="lab08-0" />
+        <mxCell id="lab08-c1" value="Part 08: Gate 2 ASYNC in the Lab (10 complaints, AI = 1 second each)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab08-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab08-c2" value="sync&lt;br&gt;httpx.Client, one by one" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab08-1">
+          <mxGeometry x="60" y="160" width="520" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="lab08-c3" value="10 x 1 s = 10 seconds" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="lab08-1">
+          <mxGeometry x="640" y="160" width="1260" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="lab08-c4" value="trap&lt;br&gt;async def + httpx.post" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab08-1">
+          <mxGeometry x="60" y="350" width="520" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="lab08-c5" value="still 10 seconds (the call blocks)" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="lab08-1">
+          <mxGeometry x="640" y="350" width="1260" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="lab08-c6" value="async&lt;br&gt;AsyncClient + await" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab08-1">
+          <mxGeometry x="60" y="540" width="520" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="lab08-c7" value="about 1 second" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab08-1">
+          <mxGeometry x="640" y="540" width="400" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="lab08-c8" value="AI stub&lt;br&gt;port 9000&lt;br&gt;&lt;br&gt;STUB_DELAY&lt;br&gt;STUB_MODE&lt;br&gt;STUB_API_KEY" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab08-1">
+          <mxGeometry x="1960" y="160" width="380" height="530" as="geometry" />
+        </mxCell>
+        <mxCell id="lab08-c9" value="triage.py: every AI failure ends in Human Review, never in a crash" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=30;fontStyle=1;" vertex="1" parent="lab08-1">
+          <mxGeometry x="60" y="730" width="2280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lab08-c10" value="AI too slow&lt;br&gt;-&gt; AI timed out" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab08-1">
+          <mxGeometry x="60" y="810" width="440" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="lab08-c11" value="AI says 401 / 500&lt;br&gt;-&gt; AI returned 401" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab08-1">
+          <mxGeometry x="520" y="810" width="440" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="lab08-c12" value="AI not reachable&lt;br&gt;-&gt; AI unavailable" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab08-1">
+          <mxGeometry x="980" y="810" width="440" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="lab08-c13" value="Bad answer&lt;br&gt;-&gt; invalid AI answer" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab08-1">
+          <mxGeometry x="1440" y="810" width="440" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="lab08-c14" value="All good&lt;br&gt;-&gt; decided_by: ai" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab08-1">
+          <mxGeometry x="1900" y="810" width="440" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="lab08-c15" value="Concept&lt;br&gt;Async does not make the AI faster. It stops our service from sitting idle while it waits.&lt;br&gt;The timeout means a slow AI never holds a customer forever." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab08-1">
+          <mxGeometry x="60" y="1110" width="1130" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lab08-c16" value="Interview Question&lt;br&gt;Your code says async def but it is still slow. Why?&lt;br&gt;What happens to a complaint when the AI times out?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab08-1">
+          <mxGeometry x="1230" y="1110" width="1130" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lab09" name="L09 Part 09 Gate 3 SERVICE">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab09-0" />
+        <mxCell id="lab09-1" parent="lab09-0" />
+        <mxCell id="lab09-c1" value="Part 09: Gate 3 SERVICE in the Lab" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab09-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab09-c2" value=".env.example&lt;br&gt;(committed)&lt;br&gt;shows which settings exist" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab09-1">
+          <mxGeometry x="60" y="170" width="540" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="lab09-c3" value=".env&lt;br&gt;(NEVER committed)&lt;br&gt;AI_API_KEY=..." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="lab09-1">
+          <mxGeometry x="60" y="450" width="540" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="lab09-c4" value="On EKS later:&lt;br&gt;ConfigMap + Secret" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="lab09-1">
+          <mxGeometry x="60" y="730" width="540" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lab09-c5" value="config.py  Settings&lt;br&gt;reads env / .env&lt;br&gt;ai_api_key: SecretStr&lt;br&gt;no key = no start" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="lab09-1">
+          <mxGeometry x="680" y="330" width="600" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="lab09-c6" value="main.py&lt;br&gt;GET /healthz&lt;br&gt;POST /triage&lt;br&gt;X-Request-ID" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab09-1">
+          <mxGeometry x="1360" y="170" width="500" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="lab09-c7" value="JSON logs&lt;br&gt;request_id&lt;br&gt;duration_ms&lt;br&gt;complaint_length&lt;br&gt;NO complaint text" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab09-1">
+          <mxGeometry x="1360" y="540" width="500" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="lab09-c8" value="Log line:&lt;br&gt;triage_completed&lt;br&gt;request_id a843...&lt;br&gt;decided_by ai&lt;br&gt;duration_ms 1025&lt;br&gt;&lt;br&gt;phone number: 0&lt;br&gt;API key: 0" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;align=left;spacingLeft=16;" vertex="1" parent="lab09-1">
+          <mxGeometry x="1940" y="170" width="400" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="lab09-c9" value="cp" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab09-1" source="lab09-c2" target="lab09-c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab09-c10" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab09-1" source="lab09-c3" target="lab09-c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab09-c11" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab09-1" source="lab09-c4" target="lab09-c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab09-c12" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab09-1" source="lab09-c5" target="lab09-c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab09-c13" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab09-1" source="lab09-c6" target="lab09-c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab09-c14" value="Concept&lt;br&gt;Same code, different environment.&lt;br&gt;The secret lives outside the code, outside Git, outside the image, outside the logs." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab09-1">
+          <mxGeometry x="60" y="1020" width="1130" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lab09-c15" value="Interview Question&lt;br&gt;Why SecretStr?&lt;br&gt;Why log complaint_length and not the complaint?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab09-1">
+          <mxGeometry x="1230" y="1020" width="1130" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lab10" name="L10 How the Files Connect">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab10-0" />
+        <mxCell id="lab10-1" parent="lab10-0" />
+        <mxCell id="lab10-c1" value="How the Files Connect: One Complaint Through the Code" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab10-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c2" value="curl /&lt;br&gt;food app" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab10-1">
+          <mxGeometry x="60" y="180" width="320" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c3" value="main.py&lt;br&gt;POST /triage&lt;br&gt;front door" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab10-1">
+          <mxGeometry x="460" y="180" width="440" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c4" value="triage.py&lt;br&gt;ai_triage()&lt;br&gt;the decision" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab10-1">
+          <mxGeometry x="980" y="180" width="440" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c5" value="ai_client.py&lt;br&gt;ask_ai()&lt;br&gt;the phone call" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab10-1">
+          <mxGeometry x="1500" y="180" width="420" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c6" value="ai_stub&lt;br&gt;/classify&lt;br&gt;the AI" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab10-1">
+          <mxGeometry x="2000" y="180" width="340" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c7" value="models.py&lt;br&gt;ComplaintIn = check 1&lt;br&gt;TriageResult = check 2&lt;br&gt;TriageResponse = answer" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab10-1">
+          <mxGeometry x="460" y="560" width="960" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c8" value="config.py&lt;br&gt;url, timeout, key" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="lab10-1">
+          <mxGeometry x="1500" y="560" width="420" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c9" value="logging_config.py&lt;br&gt;JSON log line" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="lab10-1">
+          <mxGeometry x="60" y="560" width="320" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c10" value="1" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab10-1" source="lab10-c2" target="lab10-c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c11" value="2" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab10-1" source="lab10-c3" target="lab10-c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c12" value="3" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab10-1" source="lab10-c4" target="lab10-c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c13" value="4" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab10-1" source="lab10-c5" target="lab10-c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c14" value="check 1" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.3;exitY=1;entryX=0.1;entryY=0;" edge="1" parent="lab10-1" source="lab10-c3" target="lab10-c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c15" value="check 2" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.7;entryY=0;" edge="1" parent="lab10-1" source="lab10-c4" target="lab10-c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c16" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab10-1" source="lab10-c8" target="lab10-c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c17" value="5 log" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.8;entryX=0.5;entryY=0;" edge="1" parent="lab10-1" source="lab10-c3" target="lab10-c9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c18" value="Return path: AI answer -&gt; check 2 -&gt; TriageResponse (or Human Review) -&gt; log line -&gt; JSON to the caller with X-Request-ID" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab10-1">
+          <mxGeometry x="60" y="900" width="2280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c19" value="Concept&lt;br&gt;Each file has one job. models = the rules, triage = the decision, ai_client = the phone call,&lt;br&gt;config = the settings, main = the front door." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab10-1">
+          <mxGeometry x="60" y="1120" width="1130" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lab10-c20" value="Interview Question&lt;br&gt;The AI is down. Which file decides what the customer gets back?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab10-1">
+          <mxGeometry x="1230" y="1120" width="1130" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lab11" name="L11 Part 10 Docker and ECR">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab11-0" />
+        <mxCell id="lab11-1" parent="lab11-0" />
+        <mxCell id="lab11-c1" value="Part 10: Gate 4 SHIP (1) Docker Image and Amazon ECR" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab11-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab11-c2" value="Repo&lt;br&gt;app/  ai_stub/&lt;br&gt;requirements.txt&lt;br&gt;.env  .venv" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab11-1">
+          <mxGeometry x="60" y="170" width="480" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="lab11-c3" value=".dockerignore&lt;br&gt;.env .venv .git&lt;br&gt;never enter the build" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="lab11-1">
+          <mxGeometry x="60" y="650" width="480" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="lab11-c4" value="Dockerfile&lt;br&gt;python:3.11-slim&lt;br&gt;useradd appuser (10001)&lt;br&gt;COPY requirements.txt&lt;br&gt;pip install (cached)&lt;br&gt;COPY app, ai_stub&lt;br&gt;USER appuser&lt;br&gt;HEALTHCHECK /healthz&lt;br&gt;CMD uvicorn app.main" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=20;" vertex="1" parent="lab11-1">
+          <mxGeometry x="620" y="170" width="720" height="730" as="geometry" />
+        </mxCell>
+        <mxCell id="lab11-c5" value="Image&lt;br&gt;triageops:1.2.0" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab11-1">
+          <mxGeometry x="1420" y="170" width="440" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="lab11-c6" value="Same image,&lt;br&gt;two commands:&lt;br&gt;triage (8000)&lt;br&gt;ai-stub (9000)&lt;br&gt;network triage-net" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab11-1">
+          <mxGeometry x="1420" y="510" width="440" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="lab11-c7" value="Amazon ECR&lt;br&gt;scanOnPush&lt;br&gt;tag 1.2.0" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab11-1">
+          <mxGeometry x="1940" y="170" width="400" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="lab11-c8" value="-e AI_API_URL&lt;br&gt;-e AI_API_KEY&lt;br&gt;at run time,&lt;br&gt;not in the image" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="lab11-1">
+          <mxGeometry x="1940" y="510" width="400" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="lab11-c9" value="docker build" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab11-1" source="lab11-c2" target="lab11-c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab11-c10" value="blocks" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;strokeColor=#B85450;" edge="1" parent="lab11-1" source="lab11-c3" target="lab11-c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab11-c11" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab11-1" source="lab11-c4" target="lab11-c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab11-c12" value="push" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab11-1" source="lab11-c5" target="lab11-c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab11-c13" value="run" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab11-1" source="lab11-c5" target="lab11-c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab11-c14" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab11-1" source="lab11-c8" target="lab11-c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab11-c15" value="Concept&lt;br&gt;Build once, run anywhere. Config and secrets come in at run time.&lt;br&gt;Never tag latest: always know which version runs." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab11-1">
+          <mxGeometry x="60" y="990" width="1130" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lab11-c16" value="Interview Question&lt;br&gt;Why copy requirements.txt before the code?&lt;br&gt;How do you prove .env is not inside the image?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab11-1">
+          <mxGeometry x="1230" y="990" width="1130" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lab12" name="L12 Part 11 Kubernetes Objects">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab12-0" />
+        <mxCell id="lab12-1" parent="lab12-0" />
+        <mxCell id="lab12-c1" value="Part 11: Gate 4 SHIP (2) Kubernetes Objects on EKS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab12-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab12-c2" value="namespace triageops" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;dashed=1;verticalAlign=top;align=left;spacingLeft=20;spacingTop=8;fillOpacity=35;" vertex="1" parent="lab12-1">
+          <mxGeometry x="60" y="140" width="2280" height="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="lab12-c3" value="Service triage&lt;br&gt;type LoadBalancer  80 -&gt; 8000" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab12-1">
+          <mxGeometry x="120" y="220" width="720" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="lab12-c4" value="Deployment triage&lt;br&gt;2 replicas&lt;br&gt;readiness + liveness /healthz&lt;br&gt;runAsUser 10001&lt;br&gt;RollingUpdate, maxUnavailable 0" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab12-1">
+          <mxGeometry x="120" y="470" width="720" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="lab12-c5" value="ConfigMap triage-config&lt;br&gt;ENVIRONMENT=eks&lt;br&gt;AI_API_URL=&lt;br&gt;http://ai-stub:9000/classify&lt;br&gt;AI_TIMEOUT_SECONDS=3.0" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab12-1">
+          <mxGeometry x="920" y="220" width="640" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="lab12-c6" value="Secret triage-secrets&lt;br&gt;AI_API_KEY&lt;br&gt;STUB_API_KEY&lt;br&gt;(typed with read -s)" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="lab12-1">
+          <mxGeometry x="920" y="620" width="640" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="lab12-c7" value="Service ai-stub&lt;br&gt;ClusterIP 9000&lt;br&gt;(inside the cluster only)" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab12-1">
+          <mxGeometry x="1640" y="220" width="640" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lab12-c8" value="Deployment ai-stub&lt;br&gt;same image&lt;br&gt;command ai_stub.main&lt;br&gt;1 replica" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab12-1">
+          <mxGeometry x="1640" y="490" width="640" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="lab12-c9" value="Image from ECR: ACCOUNT.dkr.ecr.ap-south-1.amazonaws.com/triageops:1.2.0   (Git only has REGISTRY_PLACEHOLDER)" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="lab12-1">
+          <mxGeometry x="120" y="940" width="2160" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="lab12-c10" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab12-1" source="lab12-c3" target="lab12-c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab12-c11" value="envFrom" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.8;entryX=1;entryY=0.2;" edge="1" parent="lab12-1" source="lab12-c5" target="lab12-c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab12-c12" value="secretKeyRef" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=1;entryY=0.8;" edge="1" parent="lab12-1" source="lab12-c6" target="lab12-c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab12-c13" value="secretKeyRef" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.8;" edge="1" parent="lab12-1" source="lab12-c6" target="lab12-c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab12-c14" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab12-1" source="lab12-c7" target="lab12-c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab12-c15" value="Concept&lt;br&gt;Readiness: not ready, send me no customers. Liveness: I am stuck, restart me.&lt;br&gt;ConfigMap = settings. Secret = the key, used by reference only." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab12-1">
+          <mxGeometry x="60" y="1220" width="1130" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lab12-c16" value="Interview Question&lt;br&gt;Why is ai-stub ClusterIP and triage LoadBalancer?&lt;br&gt;What happens if the Secret does not exist?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab12-1">
+          <mxGeometry x="1230" y="1220" width="1130" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lab13" name="L13 One Complaint on EKS">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab13-0" />
+        <mxCell id="lab13-1" parent="lab13-0" />
+        <mxCell id="lab13-c1" value="One Complaint, End to End on EKS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab13-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c2" value="Support agent&lt;br&gt;browser / curl" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="lab13-1">
+          <mxGeometry x="60" y="200" width="320" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c3" value="AWS Load&lt;br&gt;Balancer&lt;br&gt;port 80" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab13-1">
+          <mxGeometry x="440" y="200" width="340" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c4" value="Service&lt;br&gt;triage" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab13-1">
+          <mxGeometry x="840" y="200" width="320" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c5" value="triage pod&lt;br&gt;check 1&lt;br&gt;port 8000" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab13-1">
+          <mxGeometry x="1220" y="200" width="380" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c6" value="Service&lt;br&gt;ai-stub" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab13-1">
+          <mxGeometry x="1660" y="200" width="320" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c7" value="ai-stub pod&lt;br&gt;port 9000" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab13-1">
+          <mxGeometry x="2040" y="200" width="300" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c8" value="1" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab13-1" source="lab13-c2" target="lab13-c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c9" value="2" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab13-1" source="lab13-c3" target="lab13-c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c10" value="3" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab13-1" source="lab13-c4" target="lab13-c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c11" value="4" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab13-1" source="lab13-c5" target="lab13-c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c12" value="5" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab13-1" source="lab13-c6" target="lab13-c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c13" value="6. JSON answer&lt;br&gt;+ X-Request-ID" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab13-1">
+          <mxGeometry x="60" y="580" width="720" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c14" value="check 2&lt;br&gt;or Human Review fallback" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab13-1">
+          <mxGeometry x="840" y="580" width="760" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c15" value="JSON log line&lt;br&gt;kubectl logs deployment/triage" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="lab13-1">
+          <mxGeometry x="1660" y="580" width="680" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c16" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.8;entryY=0;" edge="1" parent="lab13-1" source="lab13-c7" target="lab13-c15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c17" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab13-1" source="lab13-c15" target="lab13-c14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c18" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab13-1" source="lab13-c14" target="lab13-c13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c19" value="Inside the cluster, services find each other by name:  http://ai-stub:9000/classify" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="lab13-1">
+          <mxGeometry x="60" y="900" width="2280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c20" value="Concept&lt;br&gt;Customers only see the load balancer.&lt;br&gt;Pods come and go; the Service name stays the same." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab13-1">
+          <mxGeometry x="60" y="1100" width="1130" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lab13-c21" value="Interview Question&lt;br&gt;A complaint returns decided_by: fallback: AI returned 401.&lt;br&gt;Where do you look first?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab13-1">
+          <mxGeometry x="1230" y="1100" width="1130" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lab14" name="L14 Part 12 Rolling Update">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab14-0" />
+        <mxCell id="lab14-1" parent="lab14-0" />
+        <mxCell id="lab14-c1" value="Part 12: Web Page v1.3.0 and the Rolling Update" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab14-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab14-c2" value="1. Now&lt;br&gt;v1.2.0&lt;br&gt;v1.2.0&lt;br&gt;&lt;br&gt;both serving" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab14-1">
+          <mxGeometry x="60" y="180" width="520" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="lab14-c3" value="2. maxSurge 1&lt;br&gt;v1.2.0  v1.2.0&lt;br&gt;+ v1.3.0 starting&lt;br&gt;&lt;br&gt;not ready = no traffic" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab14-1">
+          <mxGeometry x="640" y="180" width="520" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="lab14-c4" value="3. v1.3.0 ready&lt;br&gt;one v1.2.0 removed&lt;br&gt;repeat" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab14-1">
+          <mxGeometry x="1220" y="180" width="520" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="lab14-c5" value="4. Done&lt;br&gt;v1.3.0&lt;br&gt;v1.3.0&lt;br&gt;&lt;br&gt;maxUnavailable 0:&lt;br&gt;never below 2" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab14-1">
+          <mxGeometry x="1800" y="180" width="520" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="lab14-c6" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab14-1" source="lab14-c2" target="lab14-c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab14-c7" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab14-1" source="lab14-c3" target="lab14-c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab14-c8" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab14-1" source="lab14-c4" target="lab14-c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab14-c9" value="Second PuTTY window: curl /healthz every second&lt;br&gt;1.2.0 ... 1.2.0 ... 1.3.0 ... 1.3.0   and zero FAILED" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab14-1">
+          <mxGeometry x="60" y="680" width="1130" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="lab14-c10" value="kubectl rollout undo&lt;br&gt;back to 1.2.0 in seconds&lt;br&gt;then apply 1.3.0 again" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="lab14-1">
+          <mxGeometry x="1230" y="680" width="1110" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="lab14-c11" value="New in 1.3.0: complaint web page at  /   (app/static/index.html + app/web.py)" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="lab14-1">
+          <mxGeometry x="60" y="960" width="2280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lab14-c12" value="Concept&lt;br&gt;New tag for every release, never overwrite. Readiness probe + maxUnavailable 0&lt;br&gt;= customers never see a half-started pod." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab14-1">
+          <mxGeometry x="60" y="1160" width="1130" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lab14-c13" value="Interview Question&lt;br&gt;Why must 1.3.0 be a new tag and not overwrite 1.2.0?&lt;br&gt;How do you prove there was no downtime?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab14-1">
+          <mxGeometry x="1230" y="1160" width="1130" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lab15" name="L15 Part 13 Break It">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab15-0" />
+        <mxCell id="lab15-1" parent="lab15-0" />
+        <mxCell id="lab15-c1" value="Part 13: Break It and Diagnose" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab15-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab15-c2" value="1. Secret missing&lt;br&gt;CrashLoopBackOff&lt;br&gt;kubectl logs:&lt;br&gt;Field required&lt;br&gt;fix: rollout undo" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="lab15-1">
+          <mxGeometry x="60" y="160" width="740" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="lab15-c3" value="2. Wrong key&lt;br&gt;AI returned 401&lt;br&gt;our JSON log&lt;br&gt;&lt;br&gt;fix: Secret + restart" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab15-1">
+          <mxGeometry x="830" y="160" width="740" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="lab15-c4" value="3. Garbage answer&lt;br&gt;invalid AI answer&lt;br&gt;check 2 caught it&lt;br&gt;&lt;br&gt;fix: AI side" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab15-1">
+          <mxGeometry x="1600" y="160" width="740" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="lab15-c5" value="4. Slow AI&lt;br&gt;AI timed out (3 s)&lt;br&gt;duration_ms&lt;br&gt;&lt;br&gt;fix: AI side / timeout" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab15-1">
+          <mxGeometry x="60" y="600" width="740" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="lab15-c6" value="5. AI down&lt;br&gt;AI unavailable&lt;br&gt;kubectl get pods&lt;br&gt;&lt;br&gt;fix: scale up" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="lab15-1">
+          <mxGeometry x="830" y="600" width="740" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="lab15-c7" value="6. Bad probe&lt;br&gt;0/1 READY, stuck&lt;br&gt;kubectl describe&lt;br&gt;&lt;br&gt;fix: rollout undo" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="lab15-1">
+          <mxGeometry x="1600" y="600" width="740" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="lab15-c8" value="Breaks 1 and 6: the broken version never got a customer.   Breaks 2 to 5: the service never crashed." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab15-1">
+          <mxGeometry x="60" y="1050" width="2280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="lab15-c9" value="Concept&lt;br&gt;Four commands solve most problems:&lt;br&gt;kubectl get pods, describe, logs, rollout status / undo." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab15-1">
+          <mxGeometry x="60" y="1250" width="1130" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lab15-c10" value="Interview Question&lt;br&gt;A pod is in CrashLoopBackOff. What are your first two commands?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab15-1">
+          <mxGeometry x="1230" y="1250" width="1130" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lab16" name="L16 Part 14 Clean Up">
+    <mxGraphModel dx="2400" dy="1700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="lab16-0" />
+        <mxCell id="lab16-1" parent="lab16-0" />
+        <mxCell id="lab16-c1" value="Part 14: Clean Up (the order matters)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=40;fontStyle=1;" vertex="1" parent="lab16-1">
+          <mxGeometry x="40" y="20" width="2320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c2" value="1. kubectl delete&lt;br&gt;namespace&lt;br&gt;(LB goes too)" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab16-1">
+          <mxGeometry x="60" y="180" width="520" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c3" value="2. eksctl delete&lt;br&gt;cluster --wait" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab16-1">
+          <mxGeometry x="640" y="180" width="520" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c4" value="3. Delete ECR&lt;br&gt;repository" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab16-1">
+          <mxGeometry x="1220" y="180" width="520" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c5" value="4. Terminate EC2" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="lab16-1">
+          <mxGeometry x="1800" y="180" width="520" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c6" value="8. Revoke the&lt;br&gt;GitHub token" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab16-1">
+          <mxGeometry x="60" y="560" width="520" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c7" value="7. VPC: IGW,&lt;br&gt;subnets, RT, VPC" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab16-1">
+          <mxGeometry x="640" y="560" width="520" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c8" value="6. IAM role +&lt;br&gt;instance profile" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab16-1">
+          <mxGeometry x="1220" y="560" width="520" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c9" value="5. Key pair +&lt;br&gt;security group" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="lab16-1">
+          <mxGeometry x="1800" y="560" width="520" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c10" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab16-1" source="lab16-c2" target="lab16-c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c11" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab16-1" source="lab16-c3" target="lab16-c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c12" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab16-1" source="lab16-c4" target="lab16-c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c13" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab16-1" source="lab16-c5" target="lab16-c9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c14" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab16-1" source="lab16-c9" target="lab16-c8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c15" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab16-1" source="lab16-c8" target="lab16-c7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c16" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;html=1;strokeWidth=4;endArrow=classic;endSize=14;fontFamily=Comic Sans MS;fontSize=22;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="lab16-1" source="lab16-c7" target="lab16-c6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c17" value="Delete the cluster first and the load balancer is left behind:&lt;br&gt;it keeps costing money and blocks the VPC delete." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="lab16-1">
+          <mxGeometry x="60" y="940" width="2280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c18" value="Concept&lt;br&gt;Delete from the outside in: what uses a thing goes before the thing.&lt;br&gt;The VPC goes last because everything lives inside it." style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#FFF2CC;strokeColor=#D6B656;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab16-1">
+          <mxGeometry x="60" y="1200" width="1130" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="lab16-c19" value="Interview Question&lt;br&gt;Why delete the namespace before the cluster?&lt;br&gt;Why does the VPC go last?" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;fontFamily=Comic Sans MS;fontSize=25;fontStyle=1;strokeWidth=4;fillColor=#E1D5E7;strokeColor=#9673A6;align=left;spacingLeft=16;spacingRight=12;" vertex="1" parent="lab16-1">
+          <mxGeometry x="1230" y="1200" width="1130" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
