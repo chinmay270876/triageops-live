@@ -62,3 +62,5 @@ Your laptop --SSH--> EC2 workstation --git push--> GitHub
 - System Design playlist: https://www.youtube.com/playlist?list=PLeAHTLMwFYQ0
 - Telegram: https://t.me/BuildAutomateArchitect
 - Website: https://rahulchaubeyconsulting.com/
+
+My notes
